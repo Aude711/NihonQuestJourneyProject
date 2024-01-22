@@ -1,2 +1,75 @@
 //start coding by removing this file and adding yours ;)
-@import "wcs";
+@import "~bootstrap/scss/bootstrap";
+//-------------------V A R I A B L E -----------------------
+$backgroundMainColor: #F7F6F6;
+$backgroundSecondColor: #B9E1DC;
+$backgroundButton: #FFFFFF;
+
+$fontTitle: "Kaushan Script";
+$fontText: "Work Sans";
+$fontColorTextTitle: #756C83;
+$fontColorText: #000000;
+$fontColorNav: #FFFFFF;
+$fontHover: #D94A4A;
+$fontColorButton: #000000;
+$fontSizeButton: 0.75rem;
+$fontStyleButton: normal;
+$fontWeightButton: 700;
+$lineHeightButton: unset;
+$fontSizeText: 0.9375rem;
+$fontWeightText: 600;
+$fontWeightInfos: 1000;
+$lineHeightText: normal;
+$fontSizeTitleH1: 4rem;
+$fontSizeTitleH2: 3rem;
+$fontSizeNav: 1.8rem;
+$glassmorphism: blur(9.2px);
+
+@import "~bootstrap/scss/bootstrap";
+
+//-------------------M I X I N -----------------------
+@mixin myText(
+    $fontFamily,
+    $fontColorText,
+    $fontSize,
+    $lineHeight
+) {
+    font-family: $fontFamily;
+    color: $fontColorText;
+    font-size: $fontSize;
+    line-height: $lineHeight;
+}
+
+//------------------- A L L -----------------------
+* {
+    box-sizing: border-box;
+    padding: 0;
+    list-style: none;
+    scroll-behavior: smooth;
+    text-decoration: none;
+}
+
+body {
+    background-color: $backgroundMainColor;
+    height: 85%;
+    padding-bottom: 15%;
+}
+
+h1 {
+    font-weight: 400;
+    @include myText(
+        ($fontTitle),
+        ($fontColorTextTitle),
+        ($fontSizeTitleH1),
+        ($lineHeightText)
+    );
+}
+
+h2 {
+    @include myText(
+        ($fontTitle),
+        ($fontColorTextTitle),
+        ($fontSizeTitleH2),
+        ($lineHeightText)
+    );
+}
