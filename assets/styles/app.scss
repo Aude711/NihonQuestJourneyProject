@@ -53,6 +53,11 @@ body {
     background-color: $backgroundMainColor;
     height: 85%;
     padding-bottom: 15%;
+    display: flex;
+    flex-direction: column;
+    @include media-breakpoint-up(md) {
+        flex-direction: row;
+    }
 }
 
 h1 {
@@ -63,6 +68,7 @@ h1 {
         ($fontSizeTitleH1),
         ($lineHeightText)
     );
+
 }
 
 h2 {
@@ -72,4 +78,127 @@ h2 {
         ($fontSizeTitleH2),
         ($lineHeightText)
     );
+}
+
+//------------------- N A V B A R  M O B I L E -----------------------
+.navbar {
+    background-color: $backgroundSecondColor;
+    margin: 0;
+    bottom: 0;
+    @include media-breakpoint-up(md) {
+        display: none;
+    }
+}
+
+.navbar-brand {
+    display: flex;
+    @include myText(
+        ($fontTitle),
+        ($fontColorNav),
+        ($fontSizeNav),
+        ($lineHeightText)
+    );
+
+    &:hover {
+        color: white;
+    }
+}
+
+.navbar-link {
+    color: black;
+    font-family: $fontText;
+    transition: 0.3s ease;
+}
+
+.navbar-link:hover {
+    color: $fontHover;
+}
+
+.menu-burger {
+    display: none;
+    cursor: pointer;
+    @include media-breakpoint-down(md) {
+        display: block;
+    }
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: white;
+}
+
+.burger-menu.active .bar:nth-child(2){
+    opacity: 0;
+  }
+  .burger-menu.active .bar:nth-child(1){
+    transform: translateY(8px) rotate(45deg);
+  }
+  .burger-menu.active .bar:nth-child(3){
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  .nav-menu{
+    position: fixed;
+    left: -100%;
+    top: 67px;
+    gap: 0;
+    flex-direction: column;
+    background-color: $backgroundSecondColor;
+    width: 100%;
+    text-align: center;
+    transition: 0.3s;
+  }
+
+  .nav-menu.active{
+    left: 0;
+  }
+
+  //------------------- N A V B A R  D E S K T O P -----------------------
+.side-bar {
+    @include media-breakpoint-down(md) {
+        display: none;
+    }
+}
+
+.side-bar .left {
+    width: 250px;
+    height: 100vh;
+    background: $backgroundSecondColor;
+    padding: 30px 0px;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.side-menu li{
+    display: flex;
+    flex-direction: column;
+    font-size: 1.5rem;
+  }
+
+.icon-desktop {
+    font-size: 2rem;
+    @include media-breakpoint-up(md) {
+    font-size: 3.5rem;
+    margin-top: 1.7em;
+    }
+}
+
+.main {
+    @include media-breakpoint-up(md) {
+        padding-left: 250px;
+    }
+}
+
+.main-img {
+    @include media-breakpoint-up(md) {
+        height: 100vh;
+        
+    }
 }
