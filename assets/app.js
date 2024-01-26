@@ -8,3 +8,18 @@ import './bootstrap.js';
 import './styles/app.scss'
 import './bootstrap';
 require('bootstrap');
+
+import 'bootstrap-icons/font/bootstrap-icons.css';
+
+const burgerMenu = document.querySelector(".burger-menu");
+const navMenu = document.querySelector(".nav-menu");
+
+burgerMenu.addEventListener("click", () => {
+    burgerMenu.classList.toggle("active");
+    navMenu.classList.toggle("active");
+  })
+  
+  document.querySelectorAll(".navbar-link").forEach(n => n.addEventListener("click", () => {
+    burgerMenu.classList.remove("active");
+    navMenu.classList.remove("active");
+  }))

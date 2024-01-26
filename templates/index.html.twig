@@ -5,9 +5,27 @@
 {% endblock %}
 
 {% block body %}
-	<img
-	class="w-100 object-fit-cover border rounded d-md-block" src="{{ asset('build/images/imageppal.jpg') }}" alt="photo du château d'Hiroshima"/>
-    <h1 class="text-center mt-3 ">Bienvenue !</h1>
-    <p class="p-2 text-center">Bienvenue dans l'univers envoûtant du Pays du Soleil Levant ! Plongez dans la culture, échangez sur notre forum animé et découvrez les incontournables à visiter. Prêt pour une immersion au cœur du Japon ?</p>
-	<h2 class="text-center">Dernier articles</h2>
+{# -------------------------M O B I L E------------------------ #}
+	<div class="main d-md-none">
+		<img class="main-img rounded-bottom-4 w-100 object-fit-cover d-md-block" src="{{ asset('build/images/fleur-cerisier.jpg') }}" alt="photo du château d'Hiroshima"/>
+		<div>
+			<div>
+				<h1 class="text-center mt-3 ">Bienvenue !</h1>
+				<p class="p-2 text-center">Bienvenue dans l'univers envoûtant du Pays du Soleil Levant ! </br>Plongez dans la culture, échangez sur notre forum animé et découvrez les incontournables à visiter. </br>Prêt pour une immersion au cœur du Japon ?</p>
+				<h2 class="text-center">Dernier articles</h2>
+			</div>
+		</div>
+	</div>
+
+	{# -------------------------M O B I L E------------------------ #}
+	<div class="main d-none d-md-block">
+		<img class="main-img rounded-end-1 w-100 object-fit-cover d-md-block" src="{{ asset('build/images/fleur-cerisier.jpg') }}" alt="photo du château d'Hiroshima"/>
+		<div>
+			<div>
+				<h1 class="text-center mt-3 ">Bienvenue !</h1>
+				<p class="p-2 text-center">Bienvenue dans l'univers envoûtant du Pays du Soleil Levant ! </br>Plongez dans la culture, échangez sur notre forum animé et découvrez les incontournables à visiter. </br>Prêt pour une immersion au cœur du Japon ?</p>
+				<h2 class="text-center">Dernier articles</h2>
+			</div>
+		</div>
+	</div>
 {% endblock %}
