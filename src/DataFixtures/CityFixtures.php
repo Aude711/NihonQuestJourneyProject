@@ -132,23 +132,23 @@ class CityFixtures extends Fixture implements DependentFixtureInterface
         ],
         [
             'name' => 'Tottori',
-            'region' => 'region_Chugoku',
+            'region' => 'region_Chuugoku',
         ],
         [
             'name' => 'Shimane',
-            'region' => 'region_Chugoku',
+            'region' => 'region_Chuugoku',
         ],
         [
             'name' => 'Okayama',
-            'region' => 'region_Chugoku',
+            'region' => 'region_Chuugoku',
         ],
         [
             'name' => 'Hiroshima',
-            'region' => 'region_Chugoku',
+            'region' => 'region_Chuugoku',
         ],
         [
             'name' => 'Yamaguchi',
-            'region' => 'region_Chugoku',
+            'region' => 'region_Chuugoku',
         ],
         [
             'name' => 'Tokushima',

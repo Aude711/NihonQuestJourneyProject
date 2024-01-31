@@ -21,6 +21,9 @@ class Region
     #[ORM\OneToMany(mappedBy: 'region', targetEntity: City::class)]
     private Collection $city;
 
+    #[ORM\Column(length: 255)]
+    private ?string $cover = null;
+
     public function __construct()
     {
         $this->city = new ArrayCollection();
@@ -69,6 +72,18 @@ class Region
                 $city->setRegion(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getCover(): ?string
+    {
+        return $this->cover;
+    }
+
+    public function setCover(string $cover): static
+    {
+        $this->cover = $cover;
 
         return $this;
     }

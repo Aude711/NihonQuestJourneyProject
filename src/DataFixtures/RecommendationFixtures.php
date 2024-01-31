@@ -7,7 +7,7 @@ use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\DataFixtures\DependentFixtureInterface;
 use Doctrine\Persistence\ObjectManager;
 
-class RecommendationFixtures extends Fixture
+class RecommendationFixtures extends Fixture implements DependentFixtureInterface
 {
     public const RECOMMENDATIONS = [
         [
@@ -208,5 +208,10 @@ class RecommendationFixtures extends Fixture
             $manager->persist($recommendation);
         }
         $manager->flush();
+    }
+
+    public function getDependencies()
+    {
+        return [CityFixtures::class,];
     }
 }
