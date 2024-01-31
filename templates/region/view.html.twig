@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% endblock %}
+
+{% block body %}
+{# ------------ M O B I L E ---------- #}
+<div class=" d-md-none container text-center">
+    <h1>{{ region.name }}</h1>
+		<img src="{{ asset('build/images/' ~ region.cover) }}" class="d-md-none object-fit-cover w-100 rounded-3" alt="{{ region.name }}"/>
+            <h2>Villes</h2>
+                {% for cities in city %}
+                    <div class="d-flex flex-column align-items-center">
+                        <img src="{{ asset('build/images/sakura-festival.png') }}" class="icon-plj" alt="">
+                        {{cities.name}}
+                    </div>
+                {% endfor %}
+                {% for recommendations in recommendation %}
+                <div class="card d-flex" style="width: 18rem;">
+                    <img src="{{ asset('build/images/'~ recommendations.picture) }}" class="card-img-top" alt="">
+                    {{recommendations.title}}
+                    <div class="card-body">
+                        <p class="card-text">{{recommendations.content}}</p>
+                    </div>
+                </div>
+                {% endfor %}
+</div>
+
+{# ------------ D E S K T O P ---------- #}
+<div class="d-none d-md-block container text-center">
+    <h1>{{ region.name }}</h1>
+		<img src="{{ asset('build/images/' ~ region.cover) }}" class="object-fit-cover w-100 rounded-3" alt="{{ region.name }}"/>
+            <h2>Villes</h2>
+                {% for cities in city %}
+                    <div class="d-flex flex-column align-items-center">
+                        <img src="{{ asset('build/images/sakura-festival.png') }}" class="icon-plj" alt="">
+                        {{cities.name}}
+                    </div>
+                {% endfor %}
+                {% for recommendations in recommendation %}
+                <div class="card" style="width: 18rem;">
+                    <img src="{{ asset('build/images/'~ recommendations.picture) }}" class="card-img-top" alt="">
+                    {{recommendations.title}}
+                    <div class="card-body">
+                        <p class="card-text">{{recommendations.content}}</p>
+                    </div>
+                </div>
+                {% endfor %}
+</div>
+
+{% endblock %}
