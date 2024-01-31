@@ -24,7 +24,6 @@ $lineHeightText: normal;
 $fontSizeTitleH1: 4rem;
 $fontSizeTitleH2: 3rem;
 $fontSizeNav: 1.8rem;
-$glassmorphism: blur(9.2px);
 
 @import "~bootstrap/scss/bootstrap";
 
@@ -217,6 +216,42 @@ p {
         height: 100vh;
         
     }
+}
+
+.carousel-img {
+    width: 75vw;
+    height: 23vh;
+}
+
+.grid-photos {
+    display: grid;
+    grid-template-columns: 0.33fr 0.33fr 0.33fr;
+    grid-template-rows: 0.50fr 0.50fr 0.50fr;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.dernier-article:first-child {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+
+.dernier-article:nth-child(2) {
+    grid-column-start: 1;
+    grid-column-end: 2;
+}
+
+.dernier-article:nth-child(3) {
+    grid-column-start: 2;
+    grid-column-end: 3;
+}
+
+.dernier-article:nth-child(4) {
+    grid-column-start: 3;
+    grid-column-end: 4;
 }
 
 .apropos-img-desktop {

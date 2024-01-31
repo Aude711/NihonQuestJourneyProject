@@ -10,22 +10,28 @@ class PhotoFixtures extends Fixture
 {
     public const PHOTOS = [
         [
-            'picture' => 'templeosaka.jpg',
+            'picture' => 'himejicastle.jpg',
+            'articles' => 'article_Le Château d\'Himeji : Une fenêtre sur le passé Japonais',
         ],
         [
-            'picture' => 'redfeuille.jpg',
+             'picture' => 'hiroshima.jpg',
+             'articles' => 'article_Exploration émouvante : Le Dôme d\'Hiroshima',
         ],
         [
-            'picture' => 'streetame.jpg',
+            'picture' => 'nara.jpg',
+            'articles' => 'article_Le Temple de Todai-ji à Nara',
         ],
         [
             'picture' => 'kyototemple.png',
+            'articles' => 'article_Le Château d\'Himeji : Une fenêtre sur le passé Japonais',
         ],
         [
-            'picture' => 'kyotoinaka.jpg',
+            'picture' => 'cerisier7.jpg',
+            'articles' => 'article_Sous le Charme des Fleurs de Cerisier',
         ],
         [
-            'picture' => 'templewhite.jpg',
+            'picture' => 'tokyo2.jpg',
+            'articles' => 'article_Tokyo en un Coup d\'oeil',
         ],
     ];
     public function load(ObjectManager $manager): void
@@ -33,6 +39,7 @@ class PhotoFixtures extends Fixture
         foreach (self::PHOTOS as $photoFixture) {
             $photo = new Photo();
             $photo->setPicture($photoFixture['picture']);
+            $photo->setArticles($this->getReference($photoFixture['articles']));
             $manager->persist($photo);
             $this->addReference('photo_' . $photoFixture['picture'], $photo);
         }
