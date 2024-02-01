@@ -22,8 +22,8 @@
 	{% for cities in city %}
 		<div>
 			<div>
-				<img src="{{ asset('build/images/sakura-festival.png') }}" class="icon-plj" alt="icone maps">
-				{{cities.name}}
+				<a href="{{ path('city_view', { id: cities.id }) }}"><img src="{{ asset('build/images/sakura-festival.png') }}" class="icon-plj" alt="icone maps">
+				{{cities.name}}</a> 
 			</div>
 		</div>
 	{% endfor %}
@@ -49,9 +49,9 @@
 			<div>
 				<div>
 					<img src="{{ asset('build/images/sakura-festival.png') }}" class="icon-plj" alt="icone maps">
-					{# <a href="{{ path('city_view' { id: cities.id }) }}"> #}
+					<a href="{{ path('city_view', { id: cities.id }) }}">
 					{{cities.name}}
-					{# </a> #}
+					</a> 
 				</div>
 			</div>
 {% endfor %}

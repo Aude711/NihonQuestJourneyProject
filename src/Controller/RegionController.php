@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\City;
 use App\Entity\Region;
 use App\Repository\CityRepository;
 use App\Repository\RecommendationRepository;
@@ -27,15 +28,17 @@ class RegionController extends AbstractController
     #[Route('/{id}', name: 'view', methods: ['GET', 'POST'])]
     public function show(
         Region $region,
+        RecommendationRepository $adviceRepository,
         CityRepository $cityRepository,
-        RecommendationRepository $adviceRepository
+        RegionRepository $regionRepository,
     ): Response {
-        $city = $cityRepository->findBy(['region' => $region]);
-        $recommendation = $adviceRepository->findBy(['city' => $city]);
+
+        $cities = $cityRepository->findBy(['region' => $region]);
+        $recommendations = $adviceRepository->findBy(['city' => $cities]);
         return $this->render('region/view.html.twig', [
             'region' => $region,
-            'city' => $city,
-            'recommendation' => $recommendation,
+            'cities' => $cities,
+            'recommendations' => $recommendations,
         ]);
     }
 }
