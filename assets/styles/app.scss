@@ -222,3 +222,57 @@ p {
 .apropos-img-desktop {
         height: 30rem;
 }
+
+.carousel-img-plj {
+   width: 70vw;
+   height: 45vh;
+   @include media-breakpoint-up(md) {
+    width: 28vw;
+    height: 75vh;
+    
+    }
+}
+
+.icon-plj {
+    width: 8vw;
+    @include media-breakpoint-up(md) {
+        width: 4vw;  
+        }
+}
+
+.container-plj {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.glassmorphism {
+    background: rgba( 255, 255, 255, 0.2 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 5px );
+    border-radius: 10px;
+    bottom: -1.3px;
+    @include media-breakpoint-up(md) {
+        bottom: 0px;
+        width: 27vw;
+        left: 25.3em;
+    }
+}
+
+.card {
+    width: 13rem; 
+}
+
+.container-card {
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+    justify-content: center;
+    @include media-breakpoint-up(md) {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        justify-items: center;
+    }
+}
+
+.region-cover {
+    width: 100vw;
+    height: 40vh;
+}
