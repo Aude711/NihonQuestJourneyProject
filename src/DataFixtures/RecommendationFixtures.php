@@ -15,19 +15,19 @@ class RecommendationFixtures extends Fixture implements DependentFixtureInterfac
             'content' => 'Profitez de la vue sur le lac depuis le mont Usu.
             Visitez l\'île Nakajima pour ses magnifiques jardins et ses sources chaudes.',
             'picture' => '',
-            'city' => 'city_Hokkaido',
+            'city' => 'city_Sapporo',
         ],
         [
             'title' => 'Le village historique de Sankaku',
             'content' => 'Un village préservé avec des maisons traditionnelles de l\'époque Edo.',
             'picture' => '',
-            'city' => 'city_Hokkaido',
+            'city' => 'city_Sapporo',
         ],
         [
             'title' => 'Le musée Ainu',
             'content' => 'Découvrez la culture et l\'histoire du peuple autochtone de Hokkaido, les Aïnous',
             'picture' => '',
-            'city' => 'city_Hokkaido',
+            'city' => 'city_Sapporo',
         ],
         [
             'title' => 'Le sanctuaire de Sannai-Maruyama',

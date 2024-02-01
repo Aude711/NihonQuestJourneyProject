@@ -9,22 +9,22 @@
 		<img src="{{ asset('build/images/' ~ region.cover) }}" class="d-md-none object-fit-cover w-100 rounded-3" alt="{{ region.name }}"/>
             <h2 class='d-md-none pt-3 pb-3 mx-auto justify-content-center'>Villes</h2>
             <div class="d-md-none container container-plj gap-3">
-                {% for cities in city %}
+                {% for city in cities %}
                     <div>
                         <div>
                             <img src="{{ asset('build/images/sakura-festival.png') }}" class="icon-plj" alt="icone maps">
-                            {{cities.name}}
+                            {{city.name}}
                         </div>
                     </div>
                 {% endfor %}
             </div>
             <div class="card-group container container-card gap-1 pt-4">
-                {% for recommendations in recommendation %}
+                {% for recommendation in recommendations %}
                 <div class="card">
-                    <img src="{{ asset('build/images/'~ recommendations.picture) }}" class="card-img-top" alt="">
-                    {{recommendations.title}}
+                    <img src="{{ asset('build/images/'~ recommendation.picture) }}" class="card-img-top" alt="">
+                    {{recommendation.title}}
                     <div class="card-body">
-                        <p class="card-text">{{recommendations.content}}</p>
+                        <p class="card-text">{{recommendation.content}}</p>
                     </div>
                 </div>
                 {% endfor %}
@@ -38,22 +38,22 @@
             <h1>{{ region.name }}</h1>
                 <h2>Villes</h2>
                     <div class="container container-plj gap-3">
-                {% for cities in city %}
+                {% for city in cities %}
                     <div>
                         <div>
                             <img src="{{ asset('build/images/sakura-festival.png') }}" class="icon-plj" alt="icone maps">
-                            {{cities.name}}
+                            {{city.name}}
                         </div>
                     </div>
                 {% endfor %}
             </div>
                     <div class="card-group container container-card pt-5 pb-3 gap-2">
-                {% for recommendations in recommendation %}
+                {% for recommendation in recommendations %}
                 <div class="card">
-                    <img src="{{ asset('build/images/'~ recommendations.picture) }}" class="card-img-top" alt="">
-                    {{recommendations.title}}
+                    <img src="{{ asset('build/images/'~ recommendation.picture) }}" class="card-img-top" alt="">
+                    {{recommendation.title}}
                     <div class="card-body">
-                        <p class="card-text">{{recommendations.content}}</p>
+                        <p class="card-text">{{recommendation.content}}</p>
                     </div>
                 </div>
                 {% endfor %}
