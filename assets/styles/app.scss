@@ -236,7 +236,7 @@ p {
 .icon-plj {
     width: 8vw;
     @include media-breakpoint-up(md) {
-        width: 5vw;  
+        width: 4vw;  
         }
 }
 
@@ -256,4 +256,23 @@ p {
         width: 27vw;
         left: 25.3em;
     }
+}
+
+.card {
+    width: 13rem; 
+}
+
+.container-card {
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+    justify-content: center;
+    @include media-breakpoint-up(md) {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        justify-items: center;
+    }
+}
+
+.region-cover {
+    width: 100vw;
+    height: 40vh;
 }

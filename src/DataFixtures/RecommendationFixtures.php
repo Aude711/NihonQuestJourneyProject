@@ -202,7 +202,7 @@ class RecommendationFixtures extends Fixture implements DependentFixtureInterfac
         foreach (self::RECOMMENDATIONS as $adviceFixture) {
             $recommendation = new Recommendation();
             $recommendation->setTitle($adviceFixture['title']);
-            $recommendation->setContent($adviceFixture['title']);
+            $recommendation->setContent($adviceFixture['content']);
             $recommendation->setPicture($adviceFixture['picture']);
             $recommendation->setCity($this->getReference($adviceFixture['city']));
             $manager->persist($recommendation);
