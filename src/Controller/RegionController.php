@@ -8,9 +8,10 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
+#[Route('/region', name: 'region_')]
 class RegionController extends AbstractController
 {
-    #[Route('/region', name: 'app_region')]
+    #[Route('/', name: 'index')]
     public function index(RegionRepository $regionRepository, CityRepository $cityRepository): Response
     {
         $region = $regionRepository->findAll();
