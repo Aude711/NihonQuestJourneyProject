@@ -2,8 +2,6 @@
 
 namespace App\Controller;
 
-use App\Entity\City;
-use App\Entity\Recommendation;
 use App\Entity\Region;
 use App\Repository\CityRepository;
 use App\Repository\RecommendationRepository;
