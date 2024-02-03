@@ -20,8 +20,8 @@ class UserFixtures extends Fixture
     {
         // Création d’un utilisateur de type “administrateur”
         $admin = new User();
-        $admin->setUsername('admin');
         $admin->setEmail('admin@monsite.com');
+        $admin->setUsername('admin');
         $admin->setRoles(['ROLE_ADMIN']);
         $hashedPassword = $this->passwordHasher->hashPassword(
             $admin,
@@ -31,17 +31,16 @@ class UserFixtures extends Fixture
         $manager->persist($admin);
 
         $user = new User();
+        $user->setEmail('admin@monsite.com');
         $user->setUsername('Izumi711');
-        $user->setEmail('izumi711@monsite.com');
         $user->setRoles(['ROLE_USER']);
         $hashedPassword = $this->passwordHasher->hashPassword(
             $user,
-            'izumi711password'
+            'izumipassword'
         );
         $user->setPassword($hashedPassword);
         $manager->persist($user);
 
-        // Sauvegarde des 3 nouveaux utilisateurs :
         $manager->flush();
     }
 }

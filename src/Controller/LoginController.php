@@ -19,11 +19,11 @@ class LoginController extends AbstractController
         $refererUrl = $request->headers->get('referer');
         $session->set('referer_url', $refererUrl);
 
-        $user = $this->getUser();
+        // $user = $this->getUser();
 
-        if ($user !== null) {
-            return $this->redirectToRoute('app_profile', [], Response::HTTP_SEE_OTHER);
-        } else {
+        // if ($user !== null) {
+        //     return $this->redirectToRoute('app_profile', [], Response::HTTP_SEE_OTHER);
+        // } else {
             // get the login error if there is one
             $error = $authenticationUtils->getLastAuthenticationError();
 
@@ -36,6 +36,5 @@ class LoginController extends AbstractController
                 'last_username' => $lastUsername,
                 'error'         => $error,
             ]);
-        }
     }
 }
