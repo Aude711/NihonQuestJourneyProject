@@ -5,7 +5,7 @@
 {% block body %}
 {# ------------ M O B I L E ---------- #}
 <div id="carouselExampleIndicators" class="carousel slide d-md-none" data-bs-touch="true" data-bs-ride="carousel">
-	<div class="carousel-inner" data-bs-interval="600">
+	<div class="carousel-inner" data-bs-interval="30">
 		{% for key, regions in region %}
 			<div class="carousel-item {% if key == 0 %} active {% endif %}">
 				<a href="{{ path('region_view', { id: regions.id }) }}"><img src="{{ asset('build/images/' ~ regions.cover) }}" class="d-block mx-auto pt-5 carousel-img-plj object-fit-cover rounded-3" alt="{{ regions.name }}"></a>
@@ -30,10 +30,10 @@
 </div>
 {# ------------ D E S K T O P ---------- #}
 <div id="carouselExampleIndicators" class="main carousel slide d-none d-md-block" data-bs-touch="true" data-bs-ride="carousel">
-	<div class="carousel-inner" data-bs-interval="600">
+	<div class="carousel-inner" data-bs-interval="30">
 		{% for key, regions in region %}
 			<div class="carousel-item {% if key == 0 %} active {% endif %}">
-				<a href="{{ path('region_view', { id: regions.id }) }}"><img src="{{ asset('build/images/' ~ regions.cover) }}" class="d-block mx-auto pt-5 object-fit-cover carousel-img-plj" alt="{{ regions.name }}"></a>
+				<a href="{{ path('region_view', { id: regions.id }) }}"><img src="{{ asset('build/images/' ~ regions.cover) }}" class="d-block mx-auto pt-5 object-fit-cover carousel-img-plj rounded-4" alt="{{ regions.name }}"></a>
 				<div class="carousel-caption glassmorphism mx-2 my-2">
 					<h5>{{regions.name}}</h5>
 					{# <p>{{region.description}}</p> #}
