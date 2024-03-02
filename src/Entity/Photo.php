@@ -14,6 +14,9 @@ class Photo
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
+    private ?string $cover = null;
+
+    #[ORM\Column(length: 255)]
     private ?string $picture = null;
 
     #[ORM\ManyToOne(inversedBy: 'photo')]
@@ -24,6 +27,17 @@ class Photo
         return $this->id;
     }
 
+    public function getCover(): ?string
+    {
+        return $this->cover;
+    }
+
+    public function setCover(string $cover): static
+    {
+        $this->picture = $cover;
+
+        return $this;
+    }
     public function getPicture(): ?string
     {
         return $this->picture;

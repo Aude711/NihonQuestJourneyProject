@@ -1,0 +1,59 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% endblock %}
+
+{% block body %}
+{# ------------ M O B I L E ---------- #}
+<div id="carouselExampleIndicators" class="carousel slide d-md-none" data-bs-touch="true" data-bs-ride="carousel">
+	<div class="carousel-inner" data-bs-interval="30">
+		{% for key, regions in region %}
+			<div class="carousel-item {% if key == 0 %} active {% endif %}">
+				<a href="{{ path('region_view', { id: regions.id }) }}"><img src="{{ asset('build/images/' ~ regions.cover) }}" class="d-block mx-auto pt-5 carousel-img-plj object-fit-cover rounded-3" alt="{{ regions.name }}"></a>
+				<div class="carousel-caption glassmorphism mx-2 my-2">
+					<h5>{{regions.name}}</h5>
+					{# <p>{{region.description}}</p> #}
+				</div>
+			</div>
+		{% endfor %}
+	</div>
+</div>
+<h2 class="d-md-none pt-3 mx-auto justify-content-center">Villes</h2>
+<div class="d-md-none container container-plj gap-3">
+	{% for cities in city %}
+		<div>
+			<div>
+				<a href="{{ path('city_view', { id: cities.id }) }}"><img src="{{ asset('build/images/sakura-festival.png') }}" class="icon-plj" alt="icone maps">
+				{{cities.name}}</a> 
+			</div>
+		</div>
+	{% endfor %}
+</div>
+{# ------------ D E S K T O P ---------- #}
+<div id="carouselExampleIndicators" class="main carousel slide d-none d-md-block" data-bs-touch="true" data-bs-ride="carousel">
+	<div class="carousel-inner" data-bs-interval="30">
+		{% for key, regions in region %}
+			<div class="carousel-item {% if key == 0 %} active {% endif %}">
+				<a href="{{ path('region_view', { id: regions.id }) }}"><img src="{{ asset('build/images/' ~ regions.cover) }}" class="d-block mx-auto pt-5 object-fit-cover carousel-img-plj rounded-4" alt="{{ regions.name }}"></a>
+				<div class="carousel-caption glassmorphism mx-2 my-2">
+					<h5>{{regions.name}}</h5>
+					{# <p>{{region.description}}</p> #}
+				</div>
+			</div>
+		{% endfor %}
+	</div>
+</div>
+<h2 class=" d-none d-md-block main pt-3 pb-3 mx-auto justify-content-center">Villes</h2>
+<div class=" main d-none d-md-block"> 
+	<div class="main container container-plj gap-3">
+		{% for cities in city %}
+			<div>
+				<div>
+					<img src="{{ asset('build/images/sakura-festival.png') }}" class="icon-plj" alt="icone maps">
+					<a href="{{ path('city_view', { id: cities.id }) }}">
+					{{cities.name}}
+					</a> 
+				</div>
+			</div>
+{% endfor %}
+</div>
+{% endblock %}

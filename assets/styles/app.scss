@@ -3,7 +3,12 @@
 //-------------------V A R I A B L E -----------------------
 $backgroundMainColor: #F7F6F6;
 $backgroundSecondColor: #B9E1DC;
+
 $backgroundButton: #FFFFFF;
+$fontSizeButton: 1rem;
+$fontStyleButton: normal;
+$fontWeightButton: 700;
+$lineHeightButton: unset;
 
 $fontTitle: "Kaushan Script";
 $fontText: "Work Sans";
@@ -12,10 +17,6 @@ $fontColorText: #000000;
 $fontColorNav: #FFFFFF;
 $fontHover: #D94A4A;
 $fontColorButton: #000000;
-$fontSizeButton: 0.75rem;
-$fontStyleButton: normal;
-$fontWeightButton: 700;
-$lineHeightButton: unset;
 $fontSizeText: 1rem;
 $fontSizeTextDesktop: 1.3rem;
 $fontWeightText: 600;
@@ -100,6 +101,7 @@ p {
     background-color: $backgroundSecondColor;
     margin: 0;
     bottom: 0;
+    z-index: 999;
     @include media-breakpoint-up(md) {
         display: none;
     }
@@ -189,6 +191,7 @@ p {
     top: 0;
     bottom: 0;
     left: 0;
+    z-index: 999;
 }
 
 .side-menu li{
@@ -256,4 +259,98 @@ p {
 
 .apropos-img-desktop {
         height: 30rem;
+}
+
+.carousel-img-plj {
+   width: 70vw;
+   height: 45vh;
+   @include media-breakpoint-up(md) {
+    width: 28vw;
+    height: 75vh;
+    
+    }
+}
+
+.icon-plj {
+    width: 8vw;
+    @include media-breakpoint-up(md) {
+        width: 4vw;  
+        }
+}
+
+.container-plj {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.glassmorphism {
+    background: rgba( 255, 255, 255, 0.2 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 5px );
+    border-radius: 10px;
+    bottom: -1.3px;
+    @include media-breakpoint-up(md) {
+        bottom: 0px;
+        width: 27vw;
+        left: 25.3em;
+    }
+}
+
+.card {
+    width: 13rem; 
+}
+
+.container-card {
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+    justify-content: center;
+    @include media-breakpoint-up(md) {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        justify-items: center;
+    }
+}
+
+.region-cover {
+    width: 100vw;
+    height: 40vh;
+}
+
+.bi-chevron-left {
+    font-size: 2.5rem;
+    color: $fontColorTextTitle;
+}
+
+.login-icon {
+    width: 30vw;
+    padding-top: 10em;
+}
+
+.textaccount {
+    display: flex;
+    justify-content: center;
+    font-size: 1.5rem;
+}
+
+.button-login {
+    background-color: #FFFFFF;
+    width: 35vw;
+    border-radius: 41px;
+    @include media-breakpoint-up(md) {
+        width: 15vw;
+    }
+}
+
+.login-desktop {
+    display: flex;
+    justify-content: center;
+    margin: 4em;
+    padding-bottom: 0;
+}
+
+.back-picture {
+    width: 30vw;
+}
+
+.login-desktop-cont {
+    background-color: #B9E1DC;
 }

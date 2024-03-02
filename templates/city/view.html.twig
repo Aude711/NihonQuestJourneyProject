@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% endblock %}
+
+{% block body %}
+{# ------------ M O B I L E ---------- #}
+<div class="d-md-none container text-center">
+    <h1>{{ city.name }}</h1>
+		<img src="{{ asset('build/images/' ~ city.cover) }}" class="d-md-none object-fit-cover w-100 rounded-3 pb-3" alt="{{ city.name }}"/>
+        <p>{{city.description}}</p>
+            <div class="card-group container container-card gap-1 pt-4">
+                {% for recommendations in recommendation %}
+                <div class="card">
+                    <img src="{{ asset('build/images/'~ recommendations.picture) }}" class="card-img-top" alt="">
+                    {{recommendations.title}}
+                    <div class="card-body">
+                        <p class="card-text">{{recommendations.content}}</p>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+</div>
+
+{# ------------ D E S K T O P ---------- #}
+<div class="main-img d-none d-md-block text-center">
+		<img src="{{ asset('build/images/' ~ city.cover) }}" class="region-cover object-fit-cover rounded-3" alt="{{ city.name }}"/>
+        <div class="main">
+            <h1>{{ city.name }}</h1>
+            <p class='fs-5 pt-3'>{{city.description}}</p>
+                <div class="card-group container container-card pt-5 pb-3 gap-2">
+                    {% for recommendations in recommendation %}
+                    <div class="card">
+                        <img src="{{ asset('build/images/'~ recommendations.picture) }}" class="card-img-top" alt="">
+                        {{recommendations.title}}
+                        <div class="card-body">
+                            <p class="card-text">{{recommendations.content}}</p>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+        </div>
+</div>
+
+{% endblock %}
