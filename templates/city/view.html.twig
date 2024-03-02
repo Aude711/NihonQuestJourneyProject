@@ -15,9 +15,16 @@
                     {{recommendations.title}}
                     <div class="card-body">
                         <p class="card-text">{{recommendations.content}}</p>
+                        <div class="crud-button-block">
+                            {% if is_granted("ROLE_ADMIN") %}
+                                <a class="btn button-crud mt-3" href="{{ path('recommendation_edit', { id: recommendations.id }) }}">Editer la reccommendation</a>
+                                {{ include('recommendation/_delete_form.html.twig') }}
+                            {% endif %}
+                        </div>
                     </div>
                 </div>
                 {% endfor %}
+                <a class="btn button-crud mt-3" href="{{ path('recommendation_new') }}">Créer une recommendation</a>
             </div>
 </div>
 
@@ -34,6 +41,12 @@
                         {{recommendations.title}}
                         <div class="card-body">
                             <p class="card-text">{{recommendations.content}}</p>
+                            <div class="crud-button-block">
+                                {% if is_granted("ROLE_ADMIN") %}
+                                    <a class="btn button-crud mt-3" href="{{ path('recommendation_edit', { id: recommendations.id }) }}">Editer la recommendation</a>
+                                    {{ include('recommendation/_delete_form.html.twig') }}
+                                {% endif %}
+                            </div>
                         </div>
                     </div>
                     {% endfor %}

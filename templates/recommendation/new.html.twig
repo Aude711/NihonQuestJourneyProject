@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Recommendation{% endblock %}
+
+{% block body %}
+	<div class="container-fluid mt-4 px-4 paragraph w-75">
+		<h1 class="mt-2 mb-2 fs-1">Nouvelle recommendation</h1>
+			{{ include('recommendation/_form.html.twig') }}
+	</div>
+
+{% endblock %}
+
