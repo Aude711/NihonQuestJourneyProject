@@ -13,6 +13,15 @@
 				<h1 class="text-center mt-3 ">Bienvenue !</h1>
 				<p class="p-2 text-center">Bienvenue dans l'univers envoûtant du Pays du Soleil Levant ! </br>Plongez dans la culture, échangez sur notre forum animé et découvrez les incontournables à visiter. </br>Prêt pour une immersion au cœur du Japon ?</p>
 				<h2 class="text-center">Dernier articles</h2>
+					<div id="carouselExampleIndicators" class="carousel slide" data-bs-touch="true" data-bs-ride="carousel">
+					<div class="carousel-inner" data-bs-interval="600">
+						{% for key, article in articles %}
+							<div class="carousel-item {% if key == 0 %} active {% endif %}">
+								<a href="{{ path('article_show', { id: article.id }) }}"><img src="{{ asset('build/images/' ~ article.photo[0].cover) }}" class="d-block mx-auto rounded-3 carousel-img object-fit-cover" alt="{{ article.title }}">
+							</div>
+						{% endfor %}
+					</div>
+					</div>
 			</div>
 		</div>
 	</div>
@@ -25,6 +34,12 @@
 				<h1 class="text-center mt-3 ">Bienvenue !</h1>
 				<p class="p-2 text-center">Bienvenue dans l'univers envoûtant du Pays du Soleil Levant ! </br>Plongez dans la culture, échangez sur notre forum animé et découvrez les incontournables à visiter. </br>Prêt pour une immersion au cœur du Japon ?</p>
 				<h2 class="text-center">Dernier articles</h2>
+					<div class="grid-photos">
+					{% for key, article in articles %}
+						{% if key == 0 %}  {% endif %}
+							<a href="{{ path('article_show', { id: article.id }) }}"><img src="{{ asset('build/images/' ~ article.photo[0].cover) }}" class="dernier-article d-block mx-auto rounded-3 w-75 h-75 object-fit-cover" alt="{{ article.title }}">
+						{% endfor %}
+					</div>
 			</div>
 		</div>
 	</div>

@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\ArticlesRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -20,8 +22,16 @@ class Articles
     #[ORM\Column(type: Types::TEXT)]
     private ?string $content = null;
 
-    #[ORM\Column]
+    #[ORM\Column(nullable: true)]
     private ?\DateTimeImmutable $createdAt = null;
+
+    #[ORM\OneToMany(mappedBy: 'articles', targetEntity: Photo::class)]
+    private Collection $photo;
+
+    public function __construct()
+    {
+        $this->photo = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -60,6 +70,36 @@ class Articles
     public function setCreatedAt(\DateTimeImmutable $createdAt): static
     {
         $this->createdAt = $createdAt;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Photo>
+     */
+    public function getPhoto(): Collection
+    {
+        return $this->photo;
+    }
+
+    public function addPhoto(Photo $photo): static
+    {
+        if (!$this->photo->contains($photo)) {
+            $this->photo->add($photo);
+            $photo->setArticles($this);
+        }
+
+        return $this;
+    }
+
+    public function removePhoto(Photo $photo): static
+    {
+        if ($this->photo->removeElement($photo)) {
+            // set the owning side to null (unless already changed)
+            if ($photo->getArticles() === $this) {
+                $photo->setArticles(null);
+            }
+        }
 
         return $this;
     }
