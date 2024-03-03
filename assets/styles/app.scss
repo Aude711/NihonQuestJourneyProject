@@ -53,7 +53,6 @@ $fontSizeNav: 1.8rem;
 body {
     background-color: $backgroundMainColor;
     height: 85%;
-    padding-bottom: 15%;
     display: flex;
     flex-direction: column;
 }
@@ -228,8 +227,8 @@ p {
 
 .grid-photos {
     display: grid;
-    grid-template-columns: 0.33fr 0.33fr 0.33fr;
-    grid-template-rows: 0.50fr 0.50fr 0.50fr;
+    grid-template-columns: 0.30fr 0.30fr 0.30fr;
+    grid-template-rows: 0.40fr 0.40fr 0.40fr;
     align-items: center;
     justify-content: center;
     width: 100%;

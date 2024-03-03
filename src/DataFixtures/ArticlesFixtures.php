@@ -18,7 +18,6 @@ class ArticlesFixtures extends Fixture
             De la vue imprenable depuis la tour principale à l\'atmosphère sereine des jardins, 
             chaque instant passé dans ce lieu empreint de tradition était une véritable immersion 
             dans l\'histoire et la culture japonaises.',
-            'photo' => 'photo_himejicastle.jpg'
         ],
         [
             'title' => 'Exploration émouvante : Le Dôme d\'Hiroshima',
@@ -27,7 +26,6 @@ class ArticlesFixtures extends Fixture
             de 1945, est un rappel poignant des horreurs de la guerre. 
             J\'ai été imprégné d\'un sentiment de tristesse et de réflexion, 
             m\'engageant à œuvrer pour un avenir de paix et de compréhension mutuelle.',
-            'picture' => 'photo_hiroshima.jpg'
         ],
         [
             'title' => 'Le Temple de Todai-ji à Nara',
@@ -37,7 +35,6 @@ class ArticlesFixtures extends Fixture
             En explorant ses couloirs ancestraux et en contemplant sa magnificence, 
             j\'ai été profondément impréssioné par la sagesse et la tradition 
             qui imprègnent ce lieu sacré.',
-            'picture' => 'photo_nara.jpg'
         ],
         [
             'title' => 'Sous le Charme des Fleurs de Cerisier',
@@ -47,7 +44,6 @@ class ArticlesFixtures extends Fixture
             du monde entier. De Tokyo à Kyoto, j\'ai eu le privilège de me promener 
             sous les pétales roses et blancs, m\'imprégnant de la magie et du 
             symbolisme de ces fleurs emblématiques.',
-            'picture' => 'photo_cerisier7.png'
         ],
         [
             'title' => 'Tokyo en un Coup d\'oeil',
@@ -56,7 +52,6 @@ class ArticlesFixtures extends Fixture
             anciens de Asakusa, chaque quartier offre une expérience unique à découvrir. 
             Avec sa cuisine alléchante, sa culture vibrante et son accueil chaleureux, 
             Tokyo est une destination incontournable pour tout voyageur en quête d\'aventure.',
-            'picture' => 'photo_tokyo2.jpg'
         ],
     ];
     public function load(ObjectManager $manager): void
