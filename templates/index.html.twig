@@ -17,7 +17,7 @@
 					<div class="carousel-inner" data-bs-interval="600">
 						{% for key, article in articles %}
 							<div class="carousel-item {% if key == 0 %} active {% endif %}">
-								<a href="{{ path('article_show', { id: article.id }) }}"><img src="{{ asset('build/images/' ~ article.photo[0].cover) }}" class="d-block mx-auto rounded-3 carousel-img object-fit-cover" alt="{{ article.title }}">
+								<a href="{{ path('article_show', { id: article.id }) }}"><img src="{{ asset('build/images/' ~ article.photo[0].cover) }}" class="d-block mx-auto rounded-3 carousel-img object-fit-cover" alt="{{ article.title }}"></a>
 							</div>
 						{% endfor %}
 					</div>
@@ -37,7 +37,7 @@
 					<div class="grid-photos">
 					{% for key, article in articles %}
 						{% if key == 0 %}  {% endif %}
-							<a href="{{ path('article_show', { id: article.id }) }}"><img src="{{ asset('build/images/' ~ article.photo[0].cover) }}" class="dernier-article d-block mx-auto rounded-3 w-75 h-75 object-fit-cover" alt="{{ article.title }}">
+							<img src="{{ asset('build/images/' ~ article.photo[0].cover) }}" class="dernier-article d-block mx-auto rounded-3 w-75 h-75 object-fit-cover" alt="{{ article.title }}">
 						{% endfor %}
 					</div>
 			</div>

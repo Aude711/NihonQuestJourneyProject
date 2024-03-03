@@ -353,3 +353,23 @@ p {
 .login-desktop-cont {
     background-color: #B9E1DC;
 }
+
+.img-article {
+    height: 25vh;
+    @include media-breakpoint-up(md) {
+        height: 40vh;
+    }
+}
+
+.grid-articles {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 0.40fr 0.40fr 0.40fr;
+    align-items: center;
+    justify-items: center;
+    width: 100%;
+}
+
+.card-img-article {
+    height: 25vh;
+}
