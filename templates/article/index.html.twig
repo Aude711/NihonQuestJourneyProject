@@ -7,14 +7,14 @@
 <h1 class="text-center mt-2 d-md-none">Articles</h1>
 {% for article in articles %}
 <div class="card d-md-none mb-3 mt-3 ms-2">
-  <div class="g-0 d-flex">
+    <div class="g-0 d-flex">
       <img src="{{ asset('build/images/' ~ article.photo[0].cover) }}" class="img-fluid rounded-start" alt="{{ article.title }}">
         <div class="card-body border">
             <h5 class="card-title">{{ article.title }}</h5>
             <p class="card-text text-truncate" style="max-width: 150px;">{{ article.content }}</p>
             <a href="{{ path('article_show',{ id: article.id }) }}"><p class="card-text"><small class="text-body-secondary">Lire l'article</small></p></a>
         </div>
-  </div>
+    </div>
 </div>
 {% endfor %}
 

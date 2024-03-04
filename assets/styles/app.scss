@@ -373,3 +373,51 @@ p {
 .card-img-article {
     height: 25vh;
 }
+
+.tempura {
+    width: 8vw;
+    height: 4vh;
+    @include media-breakpoint-up(md) {
+        width: 5vw;
+        height: 6vh;
+    }
+}
+
+.rounded-circle {
+    width: 23vw;
+    height: 10vh;
+    @include media-breakpoint-up(md) {
+        width: 12vw;
+        height: 15vh;
+    }
+}
+
+.grid-comment {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 0.40fr 0.40fr;
+    align-items: center;
+    justify-items: center;
+    width: 100%;
+}
+
+.rating-group form {
+    display: flex;
+    flex-direction: column;
+    font-family: $fontText;
+    @include media-breakpoint-up(md) {
+        padding-left: 250px;
+    }
+
+}
+
+.rating-group input {
+    height: 10vh;
+
+}
+
+.rating-group button {
+    background-color: white;
+    width: 35vw;
+    border-radius: 41px;
+}
