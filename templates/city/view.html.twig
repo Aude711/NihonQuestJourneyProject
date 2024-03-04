@@ -20,6 +20,12 @@
                 {% endfor %}
             </div>
 </div>
+<div class="d-flex justify-content-evenly mt-5 mb-5 d-md-none">
+    <img src="{{ asset('build/images/tempura.png') }}" class="tempura">
+    <img src="{{ asset('build/images/tempura.png') }}" class="tempura">
+    <img src="{{ asset('build/images/tempura.png') }}" class="tempura">
+    <img src="{{ asset('build/images/tempura.png') }}" class="tempura">
+</div>
 
 {# ------------ D E S K T O P ---------- #}
 <div class="main-img d-none d-md-block text-center">
@@ -41,4 +47,62 @@
         </div>
 </div>
 
+<div class="main d-none d-md-flex justify-content-evenly mt-5 mb-5">
+    <img src="{{ asset('build/images/tempura.png') }}" class="tempura">
+    <img src="{{ asset('build/images/tempura.png') }}" class="tempura">
+    <img src="{{ asset('build/images/tempura.png') }}" class="tempura">
+    <img src="{{ asset('build/images/tempura.png') }}" class="tempura">
+</div>
+
+{# ------------ C O M M E N T ---------- #}
+{% if app.user %}
+		<div class="rating-group w-100 d-flex flex-column align-items-center container">
+			{{ form_start(commentForm) }}
+			<div class="d-flex align-items-center mb-2">
+				{{ form_label(commentForm.comment)}}
+			</div>
+			{{ form_widget(commentForm.comment) }}
+			<div class="my-3">{{ form_row(commentForm.Publiez) }}</div>
+			{{ form_end(commentForm) }}
+		</div>
+{% else %}
+<div class=" d-flex justify-content-around d-md-none">
+	<a class="btn w-75 mt-3" href="{{ path('login') }}">
+		Se connecter pour commenter
+	</a>
+</div>
+<div class=" d-flex justify-content-around d-none d-md-block">
+	<a class="btn w-75 mt-3" href="{{ path('login') }}">
+		Se connecter pour commenter
+	</a>
+</div>
+{% endif %}
+<div class="container d-md-none mt-5">
+	{% for comment in city.comments %}
+    <div class="grid-comment">
+        <img src="{{ asset('build/images/' ~ city.cover) }}" class="rounded-circle flex-shrink-0 me-3 fit-cover">
+            <div class="card mx-auto mb-2 w-100">
+                <div class="card-body text-center">
+                        <h5 class="card-title">{{ comment.commentator.username }}</h5>
+                        <p class="card-text">{{ comment.comment }}</p>
+                </div>
+            </div>
+    </div>
+	{% endfor %}
+
+</div>
+<div class="main container d-none d-md-block mt-5">
+	{% for comment in city.comments %}
+    <div class="grid-comment">
+        <img src="{{ asset('build/images/' ~ city.cover) }}" class="rounded-circle flex-shrink-0 me-3 fit-cover">
+            <div class="card mx-auto mb-2 w-100">
+                <div class="card-body text-center">
+                        <h5 class="card-title">{{ comment.commentator.username }}</h5>
+                        <p class="card-text">{{ comment.comment }}</p>
+                </div>
+            </div>
+    </div>
+	{% endfor %}
+
+</div>
 {% endblock %}
