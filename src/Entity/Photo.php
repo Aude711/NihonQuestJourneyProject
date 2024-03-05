@@ -16,8 +16,11 @@ class Photo
     #[ORM\Column(length: 255)]
     private ?string $cover = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(length: 255, nullable: true)]
     private ?string $picture = null;
+
+    #[ORM\ManyToOne(inversedBy: 'photo')]
+    private ?Articles $articles = null;
 
     public function getId(): ?int
     {
@@ -31,7 +34,7 @@ class Photo
 
     public function setCover(string $cover): static
     {
-        $this->picture = $cover;
+        $this->cover = $cover;
 
         return $this;
     }
@@ -43,6 +46,18 @@ class Photo
     public function setPicture(string $picture): static
     {
         $this->picture = $picture;
+
+        return $this;
+    }
+
+    public function getArticles(): ?Articles
+    {
+        return $this->articles;
+    }
+
+    public function setArticles(?Articles $articles): static
+    {
+        $this->articles = $articles;
 
         return $this;
     }
