@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% endblock %}
+
+{% block body %}
+    <h1 class="fs-1 text-center d-md-none">Editer une recommendation</h1>
+    <h1 class=" main fs-1 text-center d-none d-md-block mt-5">Editer une recommendation</h1>
+
+    <div class="text-center formbtn">
+        {{ include('recommendation/_form.html.twig', {'button_label': 'Enregistrer'}) }}
+
+        {{ include('recommendation/_delete_form.html.twig') }}
+
+        <a href="{{ path('region_index') }}">Revenir aux régions</a>
+    </div>
+{% endblock %}

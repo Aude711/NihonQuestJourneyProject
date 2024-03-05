@@ -421,3 +421,53 @@ p {
     width: 35vw;
     border-radius: 41px;
 }
+
+.grid-form {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: end;
+}
+
+.grid-form .required {
+    display: flex;
+    justify-content: center;
+}
+
+.grid-form input {
+    width: 61vw;
+    height: 3vh;
+    @include media-breakpoint-up(md) {
+        width: 30vw;
+        height: 4vh;
+    }
+}
+
+.grid-form #recommendation_content {
+    width: 61vw;
+    height: 10vh;
+    @include media-breakpoint-up(md) {
+        width: 30vw;
+        height: 9vh;
+    }
+}
+
+.grid-form #recommendation_city {
+    width: 61vw;
+    height: 3vh;
+    text-align: center;
+    @include media-breakpoint-up(md) {
+        width: 30vw;
+        height: 4vh;
+    }
+}
+
+.formbtn {
+    font-family: $fontText;
+    @include media-breakpoint-up(md) {
+        padding-left: 250px;
+    }
+}
+
+.formbtn a {
+    color: $fontColorTextTitle;
+}

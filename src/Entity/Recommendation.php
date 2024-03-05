@@ -20,11 +20,11 @@ class Recommendation
     #[ORM\Column(type: Types::TEXT)]
     private ?string $content = null;
 
-    #[ORM\Column(length: 255)]
-    private ?string $picture = null;
-
     #[ORM\ManyToOne(inversedBy: 'recommendation')]
     private ?City $city = null;
+
+    #[ORM\ManyToOne(inversedBy: 'recommendations')]
+    private ?User $owner = null;
 
     public function getId(): ?int
     {
@@ -55,18 +55,6 @@ class Recommendation
         return $this;
     }
 
-    public function getPicture(): ?string
-    {
-        return $this->picture;
-    }
-
-    public function setPicture(string $picture): static
-    {
-        $this->picture = $picture;
-
-        return $this;
-    }
-
     public function getCity(): ?City
     {
         return $this->city;
@@ -75,6 +63,18 @@ class Recommendation
     public function setCity(?City $city): static
     {
         $this->city = $city;
+
+        return $this;
+    }
+
+    public function getOwner(): ?User
+    {
+        return $this->owner;
+    }
+
+    public function setOwner(?User $owner): static
+    {
+        $this->owner = $owner;
 
         return $this;
     }
