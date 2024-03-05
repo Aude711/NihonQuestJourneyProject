@@ -17,7 +17,7 @@ use Symfony\Component\Routing\Annotation\Route;
 #[Route('/city', name: 'city_')]
 class CityController extends AbstractController
 {
-    #[Route('/{id}', name: 'view')]
+    #[Route('/{id}', name: 'show')]
     public function show(
         CityRepository $cityRepository,
         City $id,
@@ -42,7 +42,7 @@ class CityController extends AbstractController
             $entityManager->flush();
         }
 
-        return $this->render('city/view.html.twig', [
+        return $this->render('city/show.html.twig', [
             'city' => $city,
             'comments' => $comments,
             'commentForm' => $commentForm,

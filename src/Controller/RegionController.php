@@ -25,7 +25,7 @@ class RegionController extends AbstractController
         ]);
     }
 
-    #[Route('/{id}', name: 'view', methods: ['GET', 'POST'])]
+    #[Route('/{id}', name: 'show', methods: ['GET', 'POST'])]
     public function show(
         Region $region,
         RecommendationRepository $adviceRepository,
@@ -35,7 +35,7 @@ class RegionController extends AbstractController
 
         $cities = $cityRepository->findBy(['region' => $region]);
         $recommendations = $adviceRepository->findBy(['city' => $cities]);
-        return $this->render('region/view.html.twig', [
+        return $this->render('region/show.html.twig', [
             'region' => $region,
             'cities' => $cities,
             'recommendations' => $recommendations,

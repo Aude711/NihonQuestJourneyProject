@@ -26,54 +26,46 @@ class RecommendationFixtures extends Fixture implements DependentFixtureInterfac
         [
             'title' => 'Le musée Ainu',
             'content' => 'Découvrez la culture et l\'histoire du peuple autochtone de Hokkaido, les Aïnous',
-            'picture' => '',
             'city' => 'city_Sapporo',
         ],
         [
             'title' => 'Le sanctuaire de Sannai-Maruyama',
             'content' => 'Explorez les vestiges archéologiques de cette ancienne communauté Jomon, 
             datant de milliers d\'années.',
-            'picture' => '',
             'city' => 'city_Aomori',
         ],
         [
             'title' => 'Le parc de la forêt de Shirakami-Sanchi',
             'content' => 'Explorez cette forêt ancienne préservée, célèbre pour ses hêtres blancs et sa biodiversité.',
-            'picture' => '',
             'city' => 'city_Aomori',
         ],
         [
             'title' => 'Le musée de l\'architecture des anciennes résidences d\'Aomori',
             'content' => 'Découvrez les maisons traditionnelles et l\'architecture de la région.',
-            'picture' => '',
             'city' => 'city_Aomori',
         ],
         [
             'title' => 'Le château de Morioka',
             'content' => 'Découvrez l\'histoire et la culture de la région en visitant 
             les ruines du château de Morioka, qui offre également une belle vue sur la ville.',
-            'picture' => '',
             'city' => 'city_Iwate',
         ],
         [
             'title' => 'Le mont Iwate',
             'content' => 'Randonnez jusqu\'au sommet de cette montagne emblématique pour profiter 
             de vues spectaculaires sur la préfecture d\'Iwate et au-delà.',
-            'picture' => '',
             'city' => 'city_Iwate',
         ],
         [
             'title' => 'Le rocher de Jodogahama',
             'content' => 'Admirez les eaux cristallines et les formations rocheuses uniques 
             de cette plage pittoresque située dans le parc national de Sanriku.',
-            'picture' => '',
             'city' => 'city_Iwate',
         ],
         [
             'title' => 'Le festival de la lanterne de Sendai',
             'content' => 'Assistez à cet événement coloré en été, où les rues de Sendai 
             sont décorées de lanternes géantes et de décorations traditionnelles.',
-            'picture' => '',
             'city' => 'city_Miyagi',
         ],
         [
@@ -203,7 +195,6 @@ class RecommendationFixtures extends Fixture implements DependentFixtureInterfac
             $recommendation = new Recommendation();
             $recommendation->setTitle($adviceFixture['title']);
             $recommendation->setContent($adviceFixture['content']);
-            $recommendation->setPicture($adviceFixture['picture']);
             $recommendation->setCity($this->getReference($adviceFixture['city']));
             $manager->persist($recommendation);
         }

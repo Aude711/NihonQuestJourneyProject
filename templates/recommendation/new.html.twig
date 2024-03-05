@@ -3,10 +3,12 @@
 {% block title %}New Recommendation{% endblock %}
 
 {% block body %}
-	<div class="container-fluid mt-4 px-4 paragraph w-75">
-		<h1 class="mt-2 mb-2 fs-1">Nouvelle recommendation</h1>
+		<h1 class="fs-1 d-md-none text-center mt-5">Nouvelle recommendation</h1>
+		<h1 class="main fs-1 text-center d-none d-md-block mt-5">Nouvelle recommendation</h1>
+
+			<div class="grid-form formbtn">
 			{{ include('recommendation/_form.html.twig') }}
-	</div>
+			</div>
 
 {% endblock %}
 

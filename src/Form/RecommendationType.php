@@ -16,7 +16,6 @@ class RecommendationType extends AbstractType
         $builder
             ->add('title')
             ->add('content')
-            ->add('picture')
             ->add('city', EntityType::class, [
                 'class' => City::class,
                 'choice_label' => 'name',
