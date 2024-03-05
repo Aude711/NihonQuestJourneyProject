@@ -12,6 +12,8 @@ class HomeController extends AbstractController
     #[Route('/', name: 'home')]
     public function index(ArticlesRepository $articlesRepository): Response
     {
+        $totalArticles = $articlesRepository->countArticles();
+
         $articles = $articlesRepository->findBy(
             [], // No specific conditions
             ['id' => 'DESC'],
@@ -19,6 +21,7 @@ class HomeController extends AbstractController
         );
         return $this->render('index.html.twig', [
             'articles' => $articles,
+            'totalArticles' => $totalArticles,
         ]);
     }
 }

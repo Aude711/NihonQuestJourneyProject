@@ -1,0 +1,40 @@
+<div{{attributes}}>
+	<div class="mb-3 w-75 mx-auto ">
+		<input type="search" id="search" class="form-control" value="{{ query }}" data-model="query">
+	</div>
+	{% if this.articles is not empty %}
+	{# MOBILE - search #}
+	<div class="d-flex flex-column text-center d-md-none">
+
+
+	{% for article in this.articles %}
+	  		<div class="container-fluid w-75">
+		<a href="{{ path('article_show', { id: article.id }) }}"><img src="{{ asset('build/images/' ~ article.photo[0].cover) }}"  alt="{{ article.title }}"/></a>
+			<h5>{{ article.title }}</h5>
+			<p>{{ article.content }}</p>
+		</div>
+	{% endfor %}
+	    
+    
+	</div>
+	
+	{# DESKTOP - search #}
+	<div class="d-none d-md-block">
+		<div class="d-flex flex-wrap gap-1 text-center">
+		{% for article in this.articles %}
+			<div class="container-fluid w-25">
+			<a href="{{ path('article_show', { id: article.id }) }}"><img src="{{ asset('build/images/' ~ article.photo[0].cover) }}" alt="{{ article.title }}"/></a>
+				<h5>{{ article.title }}</h5>
+				<p>{{ article.content }}</p>
+			</div>
+		{% endfor %}
+		</div>
+	</div>
+</div>
+{% elseif this.articles is empty and query is not empty %}
+	        <div class="d-flex mx-auto btn button-crud mt-4 mb-2">
+<p>Désolé, nous n'avons pas trouvé d'article'.</p>
+    </div>
+ 
+	 {% endif %}
+
