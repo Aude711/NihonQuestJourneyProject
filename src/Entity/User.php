@@ -51,9 +51,13 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\OneToMany(mappedBy: 'user', targetEntity: Comment::class)]
     private Collection $comments;
 
+    #[ORM\OneToMany(mappedBy: 'owner', targetEntity: Recommendation::class)]
+    private Collection $recommendations;
+
     public function __construct()
     {
         $this->comments = new ArrayCollection();
+        $this->recommendations = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -162,6 +166,36 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
             // set the owning side to null (unless already changed)
             if ($comment->getCommentator() === $this) {
                 $comment->setCommentator(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Recommendation>
+     */
+    public function getRecommendations(): Collection
+    {
+        return $this->recommendations;
+    }
+
+    public function addRecommendation(Recommendation $recommendation): static
+    {
+        if (!$this->recommendations->contains($recommendation)) {
+            $this->recommendations->add($recommendation);
+            $recommendation->setOwner($this);
+        }
+
+        return $this;
+    }
+
+    public function removeRecommendation(Recommendation $recommendation): static
+    {
+        if ($this->recommendations->removeElement($recommendation)) {
+            // set the owning side to null (unless already changed)
+            if ($recommendation->getOwner() === $this) {
+                $recommendation->setOwner(null);
             }
         }
 
