@@ -21,23 +21,23 @@ class ArticlesRepository extends ServiceEntityRepository
         parent::__construct($registry, Articles::class);
     }
 
-    public function findLikeContentArticle(string $contentArticle): array
-    {
-        // cette fonction est utilisé pour la recherche des articles.
-        //Elle recherche les articles en fonction du contenu de l'article'
-        $result = [];
+    // public function findLikeContentArticle(string $contentArticle): array
+    // {
+    //     // cette fonction est utilisé pour la recherche des articles.
+    //     //Elle recherche les articles en fonction du contenu de l'article'
+    //     $result = [];
 
-        if (!empty($contentArticle)) {
-            $result = $this->createQueryBuilder('a')
-                ->andWhere('a.content LIKE :content')
-                ->setParameter('content', '%' . $contentArticle . '%')
-                ->orderBy('a.content', 'ASC')
-                ->getQuery()
-                ->getResult();
-        }
+    //     if (!empty($contentArticle)) {
+    //         $result = $this->createQueryBuilder('a')
+    //             ->andWhere('a.content LIKE :content')
+    //             ->setParameter('content', '%' . $contentArticle . '%')
+    //             ->orderBy('a.content', 'ASC')
+    //             ->getQuery()
+    //             ->getResult();
+    //     }
 
-        return $result;
-    }
+    //     return $result;
+    // }
 
     public function countArticles(): int
     {
