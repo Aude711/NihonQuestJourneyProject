@@ -5,6 +5,7 @@
 {% block body %}
 {# -------------------------M O B I L E------------------------ #}
 <h1 class="text-center mt-2 d-md-none">Articles</h1>
+<div class="pt-5 w-75 d-md-none mx-auto"{{ component ('ArticleSearch') }}</div>
 {% for article in articles %}
 <div class="card d-md-none mb-3 mt-3 ms-2">
     <div class="g-0 d-flex">
@@ -21,6 +22,7 @@
 {# -------------------------D E S K T O P------------------------ #}
 <div class="main d-none d-md-block">
 <h1 class="text-center mt-5 mb-4">Articles</h1>
+{{ component ('ArticleSearch') }}
     <div class="grid-articles">
         {% for article in articles %}
             <div class="card mt-5" style="width: 15rem;">

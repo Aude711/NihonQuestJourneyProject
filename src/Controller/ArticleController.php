@@ -29,9 +29,6 @@ class ArticleController extends AbstractController
         EntityManagerInterface $entityManager,
     ): Response {
 
-        // $totalLikers = $userRepository->countLikersByRecipe($recipe);
-
-
         return $this->render('article/show.html.twig', [
             'articles' => $articles,
         ]);

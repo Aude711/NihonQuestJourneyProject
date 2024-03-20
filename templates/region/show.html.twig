@@ -21,8 +21,6 @@
             <div class="card-group container container-card gap-1 pt-4">
                 {% for recommendation in recommendations %}
                 <div class="card">
-                    <img src="{{ asset('build/images/'~ recommendation.picture) }}" class="card-img-top" alt="">
-                    {{recommendation.title}}
                     <div class="card-body">
                         <p class="card-text">{{recommendation.content}}</p>
                     </div>
@@ -50,8 +48,6 @@
                     <div class="card-group container container-card pt-5 pb-3 gap-2">
                 {% for recommendation in recommendations %}
                 <div class="card">
-                    <img src="{{ asset('build/images/'~ recommendation.picture) }}" class="card-img-top" alt="">
-                    {{recommendation.title}}
                     <div class="card-body">
                         <p class="card-text">{{recommendation.content}}</p>
                     </div>

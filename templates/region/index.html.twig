@@ -8,7 +8,7 @@
 	<div class="carousel-inner" data-bs-interval="30">
 		{% for key, regions in region %}
 			<div class="carousel-item {% if key == 0 %} active {% endif %}">
-				<a href="{{ path('region_show', { id: regions.id }) }}"><img src="{{ asset('build/images/' ~ regions.cover) }}" class="d-block mx-auto pt-5 carousel-img-plj object-fit-cover rounded-3" alt="{{ regions.name }}"></a>
+				<a href="{{ path('region_show', { id: regions.id }) }}"><img src="{{ asset('build/images/' ~ regions.cover) }}" class="d-block mx-auto pt-5 carousel-img-plj object-fit-cover rounded-3" alt="{{ regions.name }}" loading="lazy"></a>
 				<div class="carousel-caption glassmorphism mx-2 my-2">
 					<h5>{{regions.name}}</h5>
 				</div>
@@ -21,7 +21,7 @@
 	{% for cities in city %}
 		<div>
 			<div>
-				<a href="{{ path('city_show', { id: cities.id }) }}"><img src="{{ asset('build/images/sakura-festival.png') }}" class="icon-plj" alt="icone maps">
+				<a href="{{ path('city_show', { id: cities.id }) }}"><img src="{{ asset('build/images/sakura-festival.png') }}" class="icon-plj" alt="icone maps" loading="lazy">
 				{{cities.name}}</a> 
 			</div>
 		</div>
@@ -32,7 +32,7 @@
 	<div class="carousel-inner" data-bs-interval="30">
 		{% for key, regions in region %}
 			<div class="carousel-item {% if key == 0 %} active {% endif %}">
-				<a href="{{ path('region_show', { id: regions.id }) }}"><img src="{{ asset('build/images/' ~ regions.cover) }}" class="d-block mx-auto pt-5 object-fit-cover carousel-img-plj rounded-4" alt="{{ regions.name }}"></a>
+				<a href="{{ path('region_show', { id: regions.id }) }}"><img src="{{ asset('build/images/' ~ regions.cover) }}" class="d-block mx-auto pt-5 object-fit-cover carousel-img-plj rounded-4" alt="{{ regions.name }}" loading="lazy"></a>
 				<div class="carousel-caption glassmorphism mx-2 my-2">
 					<h5>{{regions.name}}</h5>
 				</div>
@@ -46,7 +46,7 @@
 		{% for cities in city %}
 			<div>
 				<div>
-					<img src="{{ asset('build/images/sakura-festival.png') }}" class="icon-plj" alt="icone maps">
+					<img src="{{ asset('build/images/sakura-festival.png') }}" class="icon-plj" alt="icone maps" loading="lazy">
 					<a href="{{ path('city_show', { id: cities.id }) }}">
 					{{cities.name}}
 					</a> 

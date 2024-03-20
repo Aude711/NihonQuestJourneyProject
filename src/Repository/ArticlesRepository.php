@@ -21,28 +21,32 @@ class ArticlesRepository extends ServiceEntityRepository
         parent::__construct($registry, Articles::class);
     }
 
-//    /**
-//     * @return Articles[] Returns an array of Articles objects
-//     */
-//    public function findByExampleField($value): array
-//    {
-//        return $this->createQueryBuilder('a')
-//            ->andWhere('a.exampleField = :val')
-//            ->setParameter('val', $value)
-//            ->orderBy('a.id', 'ASC')
-//            ->setMaxResults(10)
-//            ->getQuery()
-//            ->getResult()
-//        ;
-//    }
+    // public function findLikeContentArticle(string $contentArticle): array
+    // {
+    //     // cette fonction est utilisé pour la recherche des articles.
+    //     //Elle recherche les articles en fonction du contenu de l'article'
+    //     $result = [];
 
-//    public function findOneBySomeField($value): ?Articles
-//    {
-//        return $this->createQueryBuilder('a')
-//            ->andWhere('a.exampleField = :val')
-//            ->setParameter('val', $value)
-//            ->getQuery()
-//            ->getOneOrNullResult()
-//        ;
-//    }
+    //     if (!empty($contentArticle)) {
+    //         $result = $this->createQueryBuilder('a')
+    //             ->andWhere('a.content LIKE :content')
+    //             ->setParameter('content', '%' . $contentArticle . '%')
+    //             ->orderBy('a.content', 'ASC')
+    //             ->getQuery()
+    //             ->getResult();
+    //     }
+
+    //     return $result;
+    // }
+
+    public function countArticles(): int
+    {
+        //cette fonction compte tout les articles
+        $count = $this->createQueryBuilder('a')
+        ->select('count(a.id)')
+        ->getQuery()
+        ->getSingleScalarResult();
+
+        return $count;
+    }
 }
