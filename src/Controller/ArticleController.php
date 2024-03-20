@@ -29,9 +29,6 @@ class ArticleController extends AbstractController
         EntityManagerInterface $entityManager,
     ): Response {
 
-
-
-
         return $this->render('article/show.html.twig', [
             'articles' => $articles,
         ]);

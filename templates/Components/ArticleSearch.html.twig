@@ -9,7 +9,7 @@
 
 	{% for article in this.articles %}
 	  		<div class="container-fluid w-75">
-		<a href="{{ path('article_show', { id: article.id }) }}"><img src="{{ asset('build/images/' ~ article.photo[0].cover) }}"  alt="{{ article.title }}"/></a>
+		<a href="{{ path('article_show', { id: article.id }) }}"><img src="{{ asset('build/images/' ~ article.photo[0].cover) }}" class="pic-recipe object-fit-cover" alt="{{ article.title }}"/></a>
 			<h5>{{ article.title }}</h5>
 			<p>{{ article.content }}</p>
 		</div>

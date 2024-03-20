@@ -22,7 +22,7 @@
 {# -------------------------D E S K T O P------------------------ #}
 <div class="main d-none d-md-block">
 <h1 class="text-center mt-5 mb-4">Articles</h1>
-<div class="main pt-3 w-75 d-none d-md-block"{{ component ('ArticleSearch') }}</div>
+{{ component ('ArticleSearch') }}
     <div class="grid-articles">
         {% for article in articles %}
             <div class="card mt-5" style="width: 15rem;">

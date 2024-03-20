@@ -11,14 +11,14 @@
 		<div>
 			<div>
 				<h1 class="text-center mt-3 ">Bienvenue !</h1>
-				<p class="p-2 text-center">Bienvenue dans l'univers envoûtant du Pays du Soleil Levant ! </br>Plongez dans la culture, échangez sur notre forum animé et découvrez les incontournables à visiter. </br>Prêt pour une immersion au cœur du Japon ?</p>
+				<p class="p-2 text-center">Bienvenue dans l'univers envoûtant du Pays du Soleil Levant ! </br>Plongez dans la culture, échangez et découvrez les incontournables à visiter. </br>Prêt pour une immersion au cœur du Japon ?</p>
 				<p class="fs-5 text-center mb-5 mt-5">Venez découvrir nos {{ totalArticles }} articles.</p>
 				<h2 class="text-center pt-3">Dernier articles</h2>
 					<div id="carouselExampleIndicators" class="carousel slide" data-bs-touch="true" data-bs-ride="carousel">
 					<div class="carousel-inner" data-bs-interval="600">
 						{% for key, article in articles %}
 							<div class="carousel-item {% if key == 0 %} active {% endif %}">
-								<a href="{{ path('article_show', { id: article.id }) }}"><img src="{{ asset('build/images/' ~ article.photo[0].cover) }}" class="d-block mx-auto rounded-3 carousel-img object-fit-cover" alt="{{ article.title }}"></a>
+								<a href="{{ path('article_show', { id: article.id }) }}"><img src="{{ asset('build/images/' ~ article.photo[0].cover) }}" class="d-block mx-auto rounded-3 carousel-img object-fit-cover" alt="{{ article.title }}" loading="lazy"></a>
 							</div>
 						{% endfor %}
 					</div>

@@ -3,7 +3,7 @@
 {% block body %}
 {# ------------ M O B I L E ---------- #}
 <div class="d-md-none">
-    <img src="{{ asset('build/images/' ~ articles.photo[0].cover) }}" class="img-article rounded-bottom-4 w-100 object-fit-cover d-md-block" alt="{{ articles.title }}"/>
+    <img src="{{ asset('build/images/' ~ articles.photo[0].cover) }}" class="img-article rounded-bottom-4 w-100 object-fit-cover d-md-block" alt="{{ articles.title }}" loading="lazy"/>
     <div class="d-md-none container text-center">
         <h1 class="fs-2 mt-2">{{ articles.title }}</h1>
         <p class="fs-5 mt-5">{{ articles.content }}</p>
@@ -12,7 +12,7 @@
 
 {# -------------------------D E S K T O P------------------------ #}
 <div class="main d-none d-md-block">
-<img src="{{ asset('build/images/' ~ articles.photo[0].cover) }}" class="img-article rounded-bottom-4 w-100 object-fit-cover d-md-block" alt="{{ articles.title }}"/>
+<img src="{{ asset('build/images/' ~ articles.photo[0].cover) }}" class="img-article rounded-bottom-4 w-100 object-fit-cover d-md-block" alt="{{ articles.title }}" loading="lazy"/>
     <div class="container text-center">
         <h1 class="fs-1 mt-3">{{ articles.title }}</h1>
         <p class="fs-5 mt-5 text-center">{{ articles.content }}</p>
