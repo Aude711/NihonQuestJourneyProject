@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Inscription
+{% endblock %}
+
+{% block body %}
+{# --------------------------mobile--------------------------------- #}
+	{% for flash_error in app.flashes('verify_email_error') %}
+		<div class="alert alert-danger" role="alert">{{ flash_error }}</div>
+	{% endfor %}
+	<div class="d-flex flex-column align-items-center vh-100">
+		<img src="{{ asset('build/images/register.jpg') }}" alt="photo de torii" class="register-picture-form object-fit-cover col-md-5 p-0">
+		<div class="register-form container textaccount">
+			<div class="register-logo"></div>
+			{{ form_errors(registrationForm) }}
+
+			{{ form_start(registrationForm) }}
+			{{ form_row(registrationForm.username) }}
+			{{ form_row(registrationForm.email) }}
+			{{ form_row(registrationForm.password, {
+            label: 'Password'
+        	}) }}
+			<button type="submit" class="btn button-crud button-form-center register-button mx-auto">S'inscrire</button>
+			{{ form_end(registrationForm) }}
+		</div>
+	</div>
+{% endblock %}
