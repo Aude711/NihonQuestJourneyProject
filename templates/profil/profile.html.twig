@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mon profil
+{% endblock %}
+
+{% block body %}
+{# ------------ M O B I L E ---------- #}
+	<div class="d-md-none container text-center">
+		<div>
+			<div>
+				<h1 class="text-center fs-1 mt-4 mb-4">Mon profil</h1>
+				<img class="object-fit-cover user-avatar mb-4" src="{{ asset('build/images/profil.png') }}" alt="Photo de l'avatar"/>
+			</div>
+			<div>
+				<h4 class="text-center">Pseudo</h4>
+				<p class="text-center">{{app.user.username}}</p>
+			</div>
+			<div>
+				<h4 class="text-center pt-3">Mail</h4>
+				<p class="text-center pb-5">{{app.user.email}}</p>
+			</div>
+			<div>
+				<a href="/logout" class="navbar-link text-decoration-none mx-auto">Se déconnecter</a>
+			</div>
+		</div>
+	</div>
+
+{# ------------ D E S K T O P ---------- #}
+<div class="main-img d-none d-md-block text-center">
+		<div class="main">
+			<div>
+				<h1 class="text-center fs-1 mt-4">Mon profil</h1>
+				<img class="object-fit-cover user-avatar mt-3 mb-3" src="{{ asset('build/images/profil.png') }}" alt="Photo de l'avatar"/>
+			</div>
+			<div>
+				<h4 class="text-center">Pseudo</h4>
+				<p class="text-center">{{app.user.username}}</p>
+			</div>
+			<div>
+				<h4 class="text-center">Mail</h4>
+				<p class="text-center">{{app.user.email}}</p>
+			</div>
+		</div>
+	</div>
+{% endblock %}

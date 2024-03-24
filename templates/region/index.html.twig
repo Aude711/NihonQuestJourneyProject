@@ -4,16 +4,25 @@
 
 {% block body %}
 {# ------------ M O B I L E ---------- #}
-<div id="carouselExampleIndicators" class="carousel slide d-md-none" data-bs-touch="true" data-bs-ride="carousel">
-	<div class="carousel-inner" data-bs-interval="30">
+<div id="carouselExampleDark" class="carousel carousel-dark slide d-md-none" data-bs-touch="true" data-bs-ride="carousel">
+	<div class="carousel-inner" data-bs-interval="5">
 		{% for key, regions in region %}
 			<div class="carousel-item {% if key == 0 %} active {% endif %}">
 				<a href="{{ path('region_show', { id: regions.id }) }}"><img src="{{ asset('build/images/' ~ regions.cover) }}" class="d-block mx-auto pt-5 carousel-img-plj object-fit-cover rounded-3" alt="{{ regions.name }}" loading="lazy"></a>
-				<div class="carousel-caption glassmorphism mx-2 my-2">
+				<div class="carousel-caption glassmorphism mx-auto">
 					<h5>{{regions.name}}</h5>
 				</div>
 			</div>
 		{% endfor %}
+	</div>
+	{# MOBILE - left and right button - mobile #}
+			<button class="carousel-control-prev d-md-none" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+			</button>
+			<button class="carousel-control-next d-md-none" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+				<span class="carousel-control-next-icon" aria-hidden="true"></span>
+			</button>
+		</div>
 	</div>
 </div>
 <h2 class="d-md-none pt-3 mx-auto justify-content-center">Villes</h2>
@@ -28,12 +37,12 @@
 	{% endfor %}
 </div>
 {# ------------ D E S K T O P ---------- #}
-<div id="carouselExampleIndicators" class="main carousel slide d-none d-md-block" data-bs-touch="true" data-bs-ride="carousel">
-	<div class="carousel-inner" data-bs-interval="30">
+<div id="carouselExampleIndicators" class="carousel slide d-none d-md-flex main" data-bs-touch="true" data-bs-ride="carousel">
+	<div class="carousel-inner" data-bs-interval="1">
 		{% for key, regions in region %}
 			<div class="carousel-item {% if key == 0 %} active {% endif %}">
 				<a href="{{ path('region_show', { id: regions.id }) }}"><img src="{{ asset('build/images/' ~ regions.cover) }}" class="d-block mx-auto pt-5 object-fit-cover carousel-img-plj rounded-4" alt="{{ regions.name }}" loading="lazy"></a>
-				<div class="carousel-caption glassmorphism mx-2 my-2">
+				<div class="carousel-caption glassmorphism mx-auto">
 					<h5>{{regions.name}}</h5>
 				</div>
 			</div>
