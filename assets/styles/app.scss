@@ -337,7 +337,7 @@ p {
 .textaccount {
     display: flex;
     justify-content: center;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
 }
 
 .button-login {
@@ -357,7 +357,7 @@ p {
 }
 
 .back-picture {
-    width: 30vw;
+    width: 25vw;
 }
 
 .login-desktop-cont {
@@ -397,7 +397,7 @@ p {
     width: 23vw;
     height: 10vh;
     @include media-breakpoint-up(md) {
-        width: 12vw;
+        width: 10vw;
         height: 15vh;
     }
 }
@@ -492,8 +492,21 @@ p {
 .noaccount {
     color: $fontColorText;
     padding-top: 4em;
+    @include media-breakpoint-up(md) {
+    font-size: 0.7rem;
+}
 }
 
 .card-text-titre{
     font-size: 1rem;
+}
+
+.card-torii {
+    background-color: $backgroundSecondColor;
+}
+
+.card-register {
+@include media-breakpoint-up(md) {
+    padding-left: 250px;
+}
 }
