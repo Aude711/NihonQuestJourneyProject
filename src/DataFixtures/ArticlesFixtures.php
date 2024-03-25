@@ -21,11 +21,29 @@ class ArticlesFixtures extends Fixture
         ],
         [
             'title' => 'Exploration émouvante : Le Dôme d\'Hiroshima',
-            'content' => 'En voyage à Hiroshima, ma visite au Dôme d\'Hiroshima 
-            a été profondément marquante. Ce monument emblématique, témoin du bombardement atomique 
-            de 1945, est un rappel poignant des horreurs de la guerre. 
-            J\'ai été imprégné d\'un sentiment de tristesse et de réflexion, 
-            m\'engageant à œuvrer pour un avenir de paix et de compréhension mutuelle.',
+            'content' => 'Dans l\'ombre des gratte-ciel modernes et de l\'animation urbaine 
+            se cache une ville au passé poignant : Hiroshima. Lorsque j\'ai entrepris mon voyage 
+            dans cette ville emblématique du Japon, 
+            je savais que ce serait une expérience profondément émouvante, mais rien ne pouvait me préparer à 
+            l\'impact de ce que j\'allais découvrir.
+            Ma première étape m\'a conduit au Dôme de Genbaku, le Dôme d\'Hiroshima, un monument solitaire et 
+            déchiré qui a survécu à l\'explosion atomique de 1945. En contemplant ses ruines déchiquetées, 
+            j\'ai ressenti un mélange de tristesse et de respect, confronté à la réalité brutale des 
+            conséquences de la guerre.
+            Pourtant, au milieu de cette désolation, il y avait aussi un message d\'espoir. 
+            Les musées et les mémoriaux qui parsèment la ville 
+            racontent l\'histoire poignante des survivants, de leur résilience et de leur détermination à 
+            reconstruire leur vie malgré les horreurs qu\'ils ont endurées.
+            
+            En parcourant les rues paisibles d\'Hiroshima, j\'ai été frappé par l\'atmosphère de paix 
+            et de réconciliation qui règne dans cette ville autrefois dévastée par la guerre. 
+            
+            Mon exploration d\'Hiroshima a été bien plus qu\'une simple visite touristique ; c\'était un voyage au cœur 
+            de l\'humanité, une expérience qui m\'a profondément touché et transformé. 
+            En quittant la ville derrière moi, je suis parti avec un sentiment de gratitude pour la force et la 
+            résilience 
+            du peuple d\'Hiroshima, et avec un engagement renouvelé à œuvrer pour la paix et la 
+            compréhension dans le monde.',
         ],
         [
             'title' => 'Le Temple de Todai-ji à Nara',

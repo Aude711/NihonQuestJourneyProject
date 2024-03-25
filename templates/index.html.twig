@@ -15,13 +15,13 @@
 				<p class="fs-5 text-center mb-5 mt-5">Venez découvrir nos {{ totalArticles }} articles.</p>
 				<h2 class="text-center pt-3">Dernier articles</h2>
 					<div id="carouselExampleIndicators" class="carousel slide" data-bs-touch="true" data-bs-ride="carousel">
-					<div class="carousel-inner" data-bs-interval="600">
-						{% for key, article in articles %}
-							<div class="carousel-item {% if key == 0 %} active {% endif %}">
-								<a href="{{ path('article_show', { id: article.id }) }}"><img src="{{ asset('build/images/' ~ article.photo[0].cover) }}" class="d-block mx-auto rounded-3 carousel-img object-fit-cover" alt="{{ article.title }}" loading="lazy"></a>
-							</div>
-						{% endfor %}
-					</div>
+						<div class="carousel-inner" data-bs-interval="1">
+							{% for key, article in articles %}
+								<div class="carousel-item {% if key == 0 %} active {% endif %}">
+									<a href="{{ path('article_show', { id: article.id }) }}"><img src="{{ asset('build/images/' ~ article.photo[0].cover) }}" class="d-block mx-auto rounded-3 carousel-img object-fit-cover mb-5" alt="{{ article.title }}" loading="lazy"></a>
+								</div>
+							{% endfor %}
+						</div>
 					</div>
 			</div>
 		</div>
